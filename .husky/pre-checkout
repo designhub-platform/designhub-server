@@ -1,0 +1,7 @@
+# Garante que a branch 'main' seja a base
+branch="$(git symbolic-ref --short HEAD)"
+if [[ "$branch" != "main" ]]; then
+  echo "Você não está na branch main. Mudando para main..."
+  git checkout main
+  git pull origin main
+fi
